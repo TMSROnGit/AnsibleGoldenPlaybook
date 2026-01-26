@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  vars:
+    pacotes_sistema:
+      - curl
+      - git
+      - vim
+      - htop
+      - ufw
+
+  tasks:
+    - name: Instalar pacotes essenciais do sistema
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ pacotes_sistema }}"
+
+    - name: Aplicar Role de Segurança
+      include_role:
+        name: geerlingguy.security
+
+    - name: Aplicar Role de Docker
+      include_role:
+        name: geerlingguy.docker
