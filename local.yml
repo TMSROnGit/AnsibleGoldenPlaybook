@@ -14,6 +14,8 @@
       - net-tools
       - iproute2
       - tar
+      - lynis
+      - rkhunter
 
   tasks:
     - name: Instalar pacotes essenciais para sistemas Linux
@@ -29,6 +31,7 @@
     - name: Aplicar Role de instalacao de docker
       include_role:
         name: geerlingguy.docker
+
 
 
 
