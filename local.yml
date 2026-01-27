@@ -1,4 +1,5 @@
 ---
+- hosts: localhost
   connection: local
   become: true
 
@@ -28,5 +29,6 @@
     - name: Aplicar Role de instalacao de docker
       include_role:
         name: geerlingguy.docker
+
 
 
