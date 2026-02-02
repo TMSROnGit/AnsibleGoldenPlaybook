@@ -1,4 +1,5 @@
 ---
 roles:
-  - name: geerlingguy.docker
-  - name: geerlingguy.security
+  - name: geerlingguy.docker 
+  - name: geerlingguy.security # Installs fail2ban to monitor SSH accessses, SSH security configurations (Disable Root Login) and Setup of automatic updates
+
