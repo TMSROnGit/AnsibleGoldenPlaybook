@@ -8,7 +8,7 @@
 	
 	5. ansible-galaxy install -r requirements.yml #Installs all the roles on the requirements file
 	
-	6. sudo ansible-playbook local.yml #Runs playbook
+	6. ansible-playbook local.yml #Runs playbook
 
 
 Steps to apply the playbook
