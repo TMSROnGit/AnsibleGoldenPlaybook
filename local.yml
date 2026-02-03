@@ -32,6 +32,18 @@
       include_role:
         name: geerlingguy.docker
 
+    - name: Bloquear dispostivos Usb's
+      copy:
+        dest: /etc/modprobe.d/block_usb.conf
+        content: "blacklist usb-storage"
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Unload usb-storage
 
-
-
+  handlers:
+    - name: Unload do modulo de usb's
+      modprobe:
+        name: usb-storage
+        state: absent
+      ignore_errors: true # In case a device is currently mounted
